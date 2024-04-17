@@ -8,30 +8,64 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
+            font-size: 16px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
         }
 
         h1 {
-            color: #333;
+            margin: 0;
         }
 
         h2 {
             color: #555;
+            font-size: 20px;
         }
 
         p {
             line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 18px;
         }
 
         .team {
             font-style: italic;
+            font-size: 14px;
         }
 
-        .goal {
-            font-weight: bold;
+        .column img {
+            display: block;
+            margin: 0 auto;
+            max-width: 60%; /* Adjusted image size */
+            height: auto;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-left: 15px;
         }
     </style>
 </head>
@@ -39,143 +73,40 @@
 <body>
 
     <header>
-        <h1 align="middle">Accelerating the Cosmos: Real-Time Visualization of Black Hole Phenomena</h1>
+        <h4>Accelerating the Cosmos: Real-Time Visualization of Black Hole Phenomena</h4>
     </header>
-    <p class="team" align="middle">Team: Xiaowen Liu, Alina Sheng, David Long, Leo Yuan</p>
-    <!-- <section>
-        <h2 align="middle">Summary</h2>
-        <p>Our project aims to develop a real-time, GPU-based visualization tool for simulating the gravitational
-            effects
-            of black holes on their surrounding environments. Aimed at both educational and research applications, this
-            tool
-            will leverage advanced graphics programming techniques to simulate complex gravitational phenomena such as
-            light
-            bending, redshift, gravitational lensing, and the warping of spacetime around black holes.</p>
+    <div class="container">
+        <p class="team">Team: Xiaowen Liu, Alina Sheng, David Long, Leo Yuan</p>
+        <p class="team">Video: https://berkeley.zoom.us/rec/share/Aj7QtYHi7O7vtJ5I5ulvKkZBsSuCqDo7Ru279HOLQhwAk17A1vNoxZ5yUu0wCnu1.GNXInEUdz-vRXUAI 
+            Passcode: 1Z%^^dgG</p>
+        <p class="team">https://docs.google.com/presentation/d/1IHVuQqw9sMkcueZJUp4eaFw8BwKWbSgGa5O9bqnOy3Y/edit#slide=id.p</p>
+        <section>
+            <h4>Summary</h4>
+            <p>In the past two weeks, we successfully built a ray tracer simulating the visual appearance of black holes and their surroundings based on the principles of general relativity. The Schwarzschild geometrical model we employed describes the spacetime around a non-rotating, spherically symmetric mass, where the Schwarzschild radius and the speed of light both equal one. We also employed CPU multiprocessing to utilize multiple cores for faster rendering.</p>
+        </section>
+        <section>
+            <h4>Features we successfully simulated:</h4>
+            <ul>
+                <li>Accretion disk</li>
+                <li>Image of the disk's far side</li>
+                <li>Image of the disk’s underside</li>
+                <li>Doppler Beaming</li>
+                <li>Photon Ring</li>
+            </ul>
+        </section>
+        <section>
+            <h4>Preliminary Results</h4>
+            <div class="column">
+                <img src="image/out.png" alt="Preliminary Results">
+                <figcaption align = "middle">This image shows an accretion disk around the black hole, and the observer's position is set outside the event horizon, looking towards the black hole.</figcaption>
+            </div>
+        </section>
+        <section>
+            <h4>Plan</h4>
+            <p>For the next two weeks, we plan to try to make a real-time simulation of the black hole and also implement some interactive features as our aspirational goal.</p>
+        </section>
+    </div>
 
-    </section>
-
-    <section>
-        <h2 align="middle">Problem Description</h2>
-        <p>The visualization of black holes and their effects on the cosmos poses a significant challenge due to the
-            intense
-            computational resources required to accurately simulate the bending of light and spacetime. Current tools
-            are
-            either overly simplistic, lacking in scientific accuracy, or require significant computational time,
-            limiting
-            their utility for real-time applications and interactive learning. This project aims to bridge this gap by
-            utilizing the power of modern GPU computing to bring these celestial phenomena to life in real-time,
-            offering a
-            useful tool for both scientific research and public science education.</p>
-    </section>
-
-    <section>
-        <h2 align="middle">Goals and Deliverables</h2>
-        <h3 class="goal">Baseline Goals:</h3>
-        <p>We plan to deliver a series of images and videos simulating the following effects:</p>
-        <ul>
-            <li><b>Gravitational Lensing: </b>Images showcasing how light from distant stars is bent around the black hole,
-                creating
-                arcs and rings. This effect will be highlighted in both static images and as part of the interactive
-                demo,
-                allowing users to observe changes in lensing as they adjust the mass and spin of the black hole.</li>
-            <li><b>Accretion Disk Illumination: </b>Simulations that depict the swirling gas and dust in the accretion disk
-                around the
-                black hole, heated to extreme temperatures and emitting high-energy radiation. The visualization will
-                demonstrate variations in disk appearance based on the black hole's spin and the observer's angle.</li>
-            <li><b>Event Horizon and Photon Sphere: </b>Visualizations focusing on the event horizon's silhouette against the
-                backdrop
-                of the accretion disk and the photon sphere, where gravitational forces are so strong that light orbits
-                the
-                black hole. These phenomena will be interactive, demonstrating how the size and shape of the shadow
-                change with
-                the black hole's properties.</li>
-        </ul>
-
-        <p><b>Interactive Interface Goals:</b>
-        <p>
-        <p>Build an interactive interface allowing users to:</p>
-        <ul>
-            <li><b>Manipulate Black Hole Parameters: </b>Users can adjust the mass, spin, and charge of the black hole to see
-                real-time
-                changes in gravitational lensing, event horizon shadow, and accretion disk behavior.</li>
-        </ul>
-    </section>
-    <section>
-        <h3 class="goal">Aspirational Goals:</h3>
-        <p>If things go well, we also want to achieve the following:</p>
-        <ul>
-            <li><b>Observer Positioning: </b>Through an intuitive interface, users can change their viewing angle and distance
-                from the black hole, offering diverse perspectives on the gravitational effects.</li>
-            <li><b>Integrate Real Data: </b>To integrate real astronomical data that is publicly available into the simulation,
-                allowing for the visualization of black holes within actual galactic environments.</li>
-        </ul>
-    </section>
-    <section>
-        <h2 align="middle">Schedule</h2>
-        <h4>week1: Project Setup and Preliminary Development
-        </h4>
-        <ul>
-            <li>Configure development environment.</li>
-            <li>Install necessary software and libraries (CUDA, OpenGL, etc.).</li>
-            <li>Review existing literature on black hole visualization techniques and GPU acceleration.</li>
-            <li>Start development of the core computational framework.</li>
-            <li>Implement basic GPU-accelerated structure for simulating spacetime curvature around a black hole.</li>
-        </ul>
-        <h4>week2: Core Simulation and Rendering Pipeline
-        </h4>
-        <ul>
-            <li>Integrate adaptive grid generation for efficient simulation of gravitational effects.</li>
-            <li>Begin implementing spline interpolation for accurate light path calculations.</li>
-            <li>Develop the rendering pipeline for visualizing the effects in real-time.</li>
-            <li>Create basic visual representations of black holes and surrounding celestial bodies.</li>
-            <li>Conduct initial tests of the computational framework and rendering pipeline.</li>
-            <li>Identify performance bottlenecks and plan optimizations.</li>
-
-        </ul>
-        <h4>week3: Interface Development and Data Integration
-        </h4>
-        <ul>
-            <li>Design and implement an intuitive user interface for parameter adjustment (black hole mass, spin, observer position).</li>
-            <li>Start integrating real astronomical data to enhance the simulation's authenticity.</li>
-            <li>Establish data structures for efficiently handling and visualizing celestial body data.</li>
-            <li>Implement functionality for users to interact with the simulation in real-time.</li>
-            <li>Enable dynamic adjustment of simulation parameters through the user interface.</li>
-        </ul>
-        <h4>week4: Optimization, Testing, and Documentation
-        </h4>
-        <ul>
-            <li>Optimize the simulation and rendering algorithms based on initial testing feedback.</li>
-            <li>Implement parallel computing techniques to improve performance and enable more complex simulations.</li>
-            <li>Finalize building the webpage.</li>
-            <li>Prepare for the project presentation.</li>
-        </ul>
-    </section>
-    <section>
-        <h2 align="middle">Resources/References: </h2>
-        <h4>Documentation</h4>
-        <ul>
-            <li>Cuda C++ Programming Guide (https://docs.nvidia.com/cuda/cuda-c-programming-guide/)</li>
-            <li>O. James, E. von Tunzelmann, P. Franklin, and K. S. Thorne. Gravitational lensing by spinning black holes in astrophysics, and in the movie Interstellar. Classical and Quantum Gravity, 32(6):1–41, Feb. 2015. doi: 10.1088/0264-9381/32/6/065001</li>
-            <li>C. Chan, D. Psaltis, and F. Ozel. GRay: A massively parallel GPU-based ¨ code for ray tracing in relativistic spacetimes. The Astrophysical Journal, 777(1):1–9, Oct. 2013. doi: 10.1088/0004-637X/777/1/13</li>
-            <li>T. Muller. Image-based general-relativistic visualization. ¨ European Journal of Physics, 36(6):1–11, Nov. 2015. doi: 10.1088/0143-0807/36/6/ 065019</li>
-            <li>T. Muller and J. Frauendiener. Interactive visualization of a thin disc ¨ around a Schwarzschild black hole. European Journal of Physics, 33(4):955–963, Jul. 2012. doi: 10.1088/0143-0807/33/4/955</li>
-        </ul>
-        <h4>Computing Platform:</h4>
-        <ul>
-            <li>NVIDIA GPUs with CUDA support (in Google Colab)</li>
-        </ul>
-        <h4>Web-based Visualization:</h4>
-        <ul>
-            <li>Three.js (https://threejs.org/)</li>
-        </ul>
-        <h4>Open catalogs of astronomical data:</h4>
-        <ul>
-            <li>Gaia Archive (https://gea.esac.esa.int/archive/)</li>
-            <li>Sloan Digital Sky Survey (https://www.sdss.org/)</li>
-            <li>NASA/IPAC Extragalactic Database (https://ned.ipac.caltech.edu/)</li>
-            <li>The HYG Database (https://github.com/astronexus/HYG-Database)</li>
-        </ul>
-    </section> -->
 </body>
 
 </html>
